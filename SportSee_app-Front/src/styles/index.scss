@@ -70,3 +70,28 @@ button:focus-visible {
 $primary-color: #e60000;
 $secondary-color: #020203;
 $tertiary-color: white;
+
+.greetings_container {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  &-title {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+
+    .name {
+      color: $primary-color;
+      margin-left: 3%;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.barchart_container {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}

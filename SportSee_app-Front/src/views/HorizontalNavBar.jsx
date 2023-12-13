@@ -1,10 +1,10 @@
 import React from 'react';
 import logoImage from '../assets/Sportify.png';
-import '../styles/HorizontalNavBar.scss';
+import '../styles/NavBar.scss';
 
 export default function HorizontalNavBar() {
   return (
-    <div className='navbar_container'>
+    <div className='horizontal-navbar_container'>
       <img className='logoImage' src={logoImage} alt='logo' />
       <p>Accueil</p>
       <p>Accueil</p>

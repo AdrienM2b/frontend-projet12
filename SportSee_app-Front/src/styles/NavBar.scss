@@ -1,0 +1,45 @@
+$primary-color: #e60000;
+$secondary-color: #020203;
+$tertiary-color: white;
+
+.horizontal-navbar_container {
+  position: absolute;
+  top: 0%;
+  z-index: 1000;
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $secondary-color;
+  p {
+    color: $tertiary-color;
+  }
+  .logoImage {
+    width: 15%;
+  }
+}
+
+.vertical-navbar_container {
+  position: absolute;
+  top: 0%;
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 11%;
+  height: 100vh;
+  .logo_container {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      background-color: $tertiary-color;
+      border-radius: 6px;
+      width: 50%;
+    }
+  }
+}
