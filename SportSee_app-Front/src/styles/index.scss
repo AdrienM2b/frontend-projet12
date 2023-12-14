@@ -91,7 +91,11 @@ $tertiary-color: white;
 }
 
 .barchart_container {
+  background-color: #dedede;
   position: absolute;
-  top: 40%;
+  top: 25%;
   left: 20%;
+  h3 {
+    margin-left: 10%;
+  }
 }
