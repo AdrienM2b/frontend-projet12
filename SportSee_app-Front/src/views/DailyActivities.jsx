@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 import axios from 'axios';
 
@@ -14,7 +15,17 @@ const data = [
     calories: 220,
   },
 ];
+
 export default function DailyActivities() {
+  //   const [userData, setUserData] = useState([]);
+  //   const { id } = useParams();
+
+  //   useEffect(() => {
+  //     axios.get(`http://localhost:3000/user/${id}/activity`).then((response) => {
+  //       setUserData(response.data);
+  //       console.log('reponse', userData);
+  //     });
+  //   }, [id]);
   return (
     <div className='barchart_container'>
       <h3>Activité quotidienne</h3>

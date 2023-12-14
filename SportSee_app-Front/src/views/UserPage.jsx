@@ -4,20 +4,36 @@ import DailyActivities from './DailyActivities';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-export default function UserPage() {
-  const [userData, setUserData] = useState([]);
+function UserPage() {
+  const [userData, setUserData] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`/user/${id}`).then((response) => {
-      setUserData(response.data);
-    });
+    axios
+      .get(`http://localhost:3000/user/${id}`)
+      .then((response) => {
+        setUserData(response.data);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error('Erreur lors de la récupération des données:', error);
+      });
   }, [id]);
+
+  if (!userData) {
+    // Si les données ne sont pas encore chargées, affichez un message de chargement
+    return <p>Chargement...</p>;
+  }
+
+  // Si userData est chargé, continuez avec le rendu normal
+  const firstName = userData.data.userInfos.firstName;
 
   return (
     <div>
-      <Greetings />
+      <Greetings name={firstName} />
       <DailyActivities />
     </div>
   );
 }
+
+export default UserPage;
