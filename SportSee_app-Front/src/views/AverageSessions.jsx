@@ -31,16 +31,24 @@ export default function AverageSessions({ data }) {
 
   return (
     <div className='average-sessions_container'>
-      <p>Average Sessions</p>
-      <LineChart width={200} height={150} data={data}>
-        <XAxis dataKey='day' tickFormatter={formatXAxis} stroke='white' />
+      <h3>Durée moyenne des sessions</h3>
+      <LineChart width={250} height={200} data={data}>
+        <XAxis
+          dataKey='day'
+          tickLine={false}
+          tick={{ fill: 'white' }}
+          tickFormatter={formatXAxis}
+          opacity={0.5}
+          axisLine={false}
+          padding={{ left: 10 }}
+        />
         <YAxis hide />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend />
+        <Tooltip content={<CustomTooltip />} cursor={false} />
         <Line
           type='monotone'
           dataKey='sessionLength'
           stroke='white'
+          opacity={0.5}
           strokeWidth={2}
           dot={false}
           activeDot={{ r: 3 }}

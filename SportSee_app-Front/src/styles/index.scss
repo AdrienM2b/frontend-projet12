@@ -118,17 +118,21 @@ $gradient-color: #b80000;
 
 .average-sessions_container {
   position: absolute;
-  width: auto;
-  height: auto;
   background: linear-gradient(
     to right,
     $primary-color 70%,
     $gradient-color 30%
   );
-  padding: 2%;
   top: 65%;
   left: 20%;
   border-radius: 10px;
+  h3 {
+    width: 70%;
+    color: white;
+    opacity: 0.5;
+    margin: 0;
+    transform: translate(10px, 10px);
+  }
   .custom-tooltip-average-session {
     background-color: $tertiary-color;
     font-size: 10px;
@@ -138,7 +142,20 @@ $gradient-color: #b80000;
     font-weight: 500;
     width: 4vw;
     height: 3vh;
-    padding: 6%;
     transform: translate(0%, -100%);
   }
+}
+
+.performance_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #020203;
+  width: 25vw;
+  height: 27vh;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  border-radius: 10px;
 }
