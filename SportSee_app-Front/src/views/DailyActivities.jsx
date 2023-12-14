@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts';
+import { BarChart, XAxis, YAxis, Tooltip, Bar, Legend } from 'recharts';
 import axios from 'axios';
 
 const data = [
@@ -17,24 +17,37 @@ const data = [
 ];
 
 export default function DailyActivities() {
-  //   const [userData, setUserData] = useState([]);
-  //   const { id } = useParams();
+  const [userData, setUserData] = useState(null);
+  const { id } = useParams();
 
-  //   useEffect(() => {
-  //     axios.get(`http://localhost:3000/user/${id}/activity`).then((response) => {
-  //       setUserData(response.data);
-  //       console.log('reponse', userData);
-  //     });
-  //   }, [id]);
+  useEffect(() => {
+    axios.get(`http://localhost:3000/user/${id}/activity`).then((response) => {
+      setUserData(response.data);
+    });
+  }, [id]);
+
+  console.log(userData);
+
+  if (!userData) {
+    return <p>Chargement...</p>;
+  }
+
+  const sessionsData = userData.data.sessions;
+  const formatXAxis = (tickItem) => {
+    // Votre logique de formatage ici, par exemple :
+    return tickItem + 1;
+  };
+
   return (
     <div className='barchart_container'>
       <h3>Activité quotidienne</h3>
-      <BarChart width={600} height={300} data={data}>
-        <XAxis dataKey='name' />
-        <YAxis />
+      <BarChart width={900} height={300} data={sessionsData}>
+        <XAxis tickFormatter={formatXAxis} />
+        <YAxis dataKey='kilogram' />
         <Tooltip />
-        <Bar dataKey='weight' fill='#8884d8' />
-        <Bar dataKey='calories' fill='#82ca9d' />
+        <Bar dataKey='calories' fill='#242424' barSize={20} />
+        <Bar dataKey='kilogram' fill='#e60000' barSize={20} />
+        <Legend align='right' verticalAlign='top' />
       </BarChart>
     </div>
   );

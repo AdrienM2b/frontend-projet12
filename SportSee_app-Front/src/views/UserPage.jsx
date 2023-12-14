@@ -13,7 +13,6 @@ function UserPage() {
       .get(`http://localhost:3000/user/${id}`)
       .then((response) => {
         setUserData(response.data);
-        console.log(response);
       })
       .catch((error) => {
         console.error('Erreur lors de la récupération des données:', error);
