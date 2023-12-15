@@ -75,7 +75,7 @@ $gradient-color: #b80000;
 .greetings_container {
   position: absolute;
   top: 10%;
-  left: 20%;
+  left: 15%;
   &-title {
     display: flex;
     align-items: center;
@@ -92,13 +92,29 @@ $gradient-color: #b80000;
 }
 
 .barchart_container {
-  background-color: #dedede;
-  position: absolute;
-  top: 25%;
-  left: 20%;
+  width: 100%;
+  height: 31.5vw;
+  background-color: #fbfbfb;
   h3 {
     margin-left: 10%;
   }
+}
+
+.user-page_container {
+  width: 60vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40% 0% 0% 25%;
+}
+
+.stat-container {
+  width: 60vw;
+  height: 40vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .custom-tooltip {
@@ -117,14 +133,13 @@ $gradient-color: #b80000;
 }
 
 .average-sessions_container {
-  position: absolute;
+  width: 17.5vw;
+  height: 17.5vw;
   background: linear-gradient(
     to right,
     $primary-color 70%,
     $gradient-color 30%
   );
-  top: 65%;
-  left: 20%;
   border-radius: 10px;
   h3 {
     width: 70%;
@@ -152,16 +167,21 @@ $gradient-color: #b80000;
   justify-content: center;
   align-items: center;
   background-color: #020203;
-  width: 25vw;
-  height: 27vh;
-  position: absolute;
-  top: 65%;
-  left: 50%;
+  width: 17.5vw;
+  height: 17.5vw;
   border-radius: 10px;
 }
 
 .today-score_container {
-  position: absolute;
-  top: 65%;
-  left: 80%;
+  width: 17.5vw;
+  height: 17.5vw;
+  background-color: #fbfbfb;
+  .inner-circle {
+    position: relative;
+    width: 140px; /* Ajustez la taille pour correspondre à l'intérieur de la jauge */
+    height: 140px; /* Ajustez la taille pour correspondre à l'intérieur de la jauge */
+    background-color: #f0f0f0; /* Couleur de votre choix */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

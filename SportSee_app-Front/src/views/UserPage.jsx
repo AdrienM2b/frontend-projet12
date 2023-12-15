@@ -50,12 +50,14 @@ function UserPage() {
   const performanceKindOfWorkout = performanceData.data;
 
   return (
-    <div>
+    <div className='user-page_container'>
       <Greetings name={userData.data.userInfos.firstName} />
       <DailyActivities data={sessionsData} />
-      <AverageSessions data={averageSessions} />
-      <Performance data={performanceKindOfWorkout} />
-      <TodayScore data={userData.data.todayScore} />
+      <div className='stat-container'>
+        <AverageSessions data={averageSessions} />
+        <Performance data={performanceKindOfWorkout} />
+        <TodayScore data={userData.data.todayScore} />
+      </div>
     </div>
   );
 }
