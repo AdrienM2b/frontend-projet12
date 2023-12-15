@@ -5,7 +5,7 @@ export default function TodayScore({ data }) {
   const dataFormated = [{ name: 'Score', value: data }];
   const startAngle = 180;
   //   const endAngle = -90;
-  const backgroundCircleData = [{ value: 100 }];
+  const backgroundCircleData = [{ value: 1 }];
   const scoreEndAngle = startAngle - data * 360;
   const percentage = (data * 100).toFixed(0) + '%';
   return (
@@ -30,8 +30,8 @@ export default function TodayScore({ data }) {
           </Pie>
           <Pie
             data={backgroundCircleData}
-            cx='50%'
-            cy='50%'
+            cx='51%'
+            cy='51%'
             innerRadius={0} // Commence à partir du centre
             outerRadius={70} // Même taille que l'intérieur de la jauge
             fill='#f0f0f0' // Couleur de votre choix pour le cercle de fond

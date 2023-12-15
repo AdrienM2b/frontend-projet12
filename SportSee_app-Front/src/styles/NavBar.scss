@@ -13,7 +13,7 @@ $tertiary-color: white;
   align-items: center;
   justify-content: space-around;
   background-color: $secondary-color;
-  p {
+  a {
     color: $tertiary-color;
   }
   .logoImage {
@@ -39,7 +39,7 @@ $tertiary-color: white;
     img {
       background-color: $tertiary-color;
       border-radius: 6px;
-      width: 50%;
+      width: 100%;
     }
   }
 }

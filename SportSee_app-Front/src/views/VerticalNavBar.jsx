@@ -9,10 +9,18 @@ export default function VerticalNavBar() {
   return (
     <aside className='vertical-navbar_container'>
       <div className='logo_container'>
-        <img src={yogaIcon} alt='' />
-        <img src={swimIcon} alt='' />
-        <img src={bikeIcon} alt='' />
-        <img src={gymIcon} alt='' />
+        <a href='#'>
+          <img src={yogaIcon} alt='' />
+        </a>
+        <a href='#'>
+          <img src={swimIcon} alt='' />
+        </a>
+        <a href='#'>
+          <img src={bikeIcon} alt='' />
+        </a>
+        <a href='#'>
+          <img src={gymIcon} alt='' />
+        </a>
       </div>
     </aside>
   );

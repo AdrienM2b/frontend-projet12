@@ -64,7 +64,7 @@ export default function DailyActivities({ data }) {
             verticalAlign='top'
             layout='horizontal'
             align='right'
-            wrapperStyle={{ top: '-15%', right: '10%' }}
+            wrapperStyle={{ top: '-45px' }}
           />
         </BarChart>
       </ResponsiveContainer>

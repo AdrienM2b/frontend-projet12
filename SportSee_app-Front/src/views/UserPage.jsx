@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import AverageSessions from './AverageSessions';
 import Performance from './Performance';
 import TodayScore from './TodayScore';
+import NutritionCounter from './NutritionCounter';
 
 function UserPage() {
   const { id } = useParams();
@@ -50,13 +51,18 @@ function UserPage() {
   const performanceKindOfWorkout = performanceData.data;
 
   return (
-    <div className='user-page_container'>
+    <div className='main_container'>
       <Greetings name={userData.data.userInfos.firstName} />
-      <DailyActivities data={sessionsData} />
-      <div className='stat-container'>
-        <AverageSessions data={averageSessions} />
-        <Performance data={performanceKindOfWorkout} />
-        <TodayScore data={userData.data.todayScore} />
+      <div className='horizontal_container'>
+        <div className='vertical_container'>
+          <DailyActivities data={sessionsData} />
+          <div className='stat-container'>
+            <AverageSessions data={averageSessions} />
+            <Performance data={performanceKindOfWorkout} />
+            <TodayScore data={userData.data.todayScore} />
+          </div>
+        </div>
+        <NutritionCounter data={userData} />
       </div>
     </div>
   );

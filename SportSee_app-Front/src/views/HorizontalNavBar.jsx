@@ -6,10 +6,10 @@ export default function HorizontalNavBar() {
   return (
     <div className='horizontal-navbar_container'>
       <img className='logoImage' src={logoImage} alt='logo' />
-      <p>Accueil</p>
-      <p>Accueil</p>
-      <p>Accueil</p>
-      <p>Accueil</p>
+      <a href='#'>Accueil</a>
+      <a href='#'>Profil</a>
+      <a href='#'>Réglage</a>
+      <a href='#'>Communauté</a>
     </div>
   );
 }
