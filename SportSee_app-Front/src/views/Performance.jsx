@@ -18,11 +18,11 @@ export default function Performance({ data }) {
   return (
     <div className='performance_container'>
       <ResponsiveContainer width='100%' height='100%'>
-        <RadarChart outerRadius={65} data={dataFormated}>
+        <RadarChart outerRadius={50} data={dataFormated}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey='subject'
-            fontSize={'12px'}
+            fontSize={'7px'}
             tick={{ fill: 'white' }}
           />
           <PolarRadiusAxis tickCount={6} stroke='none' />

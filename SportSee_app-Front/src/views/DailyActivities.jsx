@@ -36,7 +36,7 @@ export default function DailyActivities({ data }) {
         <BarChart
           width={800}
           height={300}
-          data={data}
+          data={data.sessions}
           margin={{ top: 10, right: 30, left: 20, bottom: 50 }}
         >
           <CartesianGrid strokeDasharray='3 3' stroke='' />

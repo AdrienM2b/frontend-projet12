@@ -1,42 +1,36 @@
 import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Layer } from 'recharts';
+import {
+  ResponsiveContainer,
+  RadialBarChart,
+  RadialBar,
+  PolarAngleAxis,
+} from 'recharts';
 
 export default function TodayScore({ data }) {
   const dataFormated = [{ name: 'Score', value: data }];
   const startAngle = 180;
-  //   const endAngle = -90;
-  const backgroundCircleData = [{ value: 1 }];
+
   const scoreEndAngle = startAngle - data * 360;
   const percentage = (data * 100).toFixed(0) + '%';
   return (
     <div className='today-score_container'>
       <ResponsiveContainer width='100%' height='100%'>
-        <PieChart>
-          <Pie
-            data={dataFormated}
-            cx='50%'
-            cy='50%'
+        <RadialBarChart
+          innerRadius='80%'
+          outerRadius='100%'
+          data={dataFormated}
+        >
+          <PolarAngleAxis type='number' domain={[0, 1]} tick={false} />
+          <circle cx='50%' cy='50%' fill='white' r='70' z-index='2'></circle>
+          <RadialBar
+            minAngle={15}
+            background
+            clockWise={true}
+            dataKey='value'
+            cornerRadius={45}
+            fill='#ff7300'
             startAngle={startAngle}
             endAngle={scoreEndAngle}
-            innerRadius={65}
-            outerRadius={80}
-            fill='black'
-            paddingAngle={5}
-            dataKey='value'
-            cornerRadius={55}
-            activeIndex={0}
-          >
-            <Cell key={`cell-0`} fill='#e60000' />
-          </Pie>
-          <Pie
-            data={backgroundCircleData}
-            cx='51%'
-            cy='51%'
-            innerRadius={0} // Commence à partir du centre
-            outerRadius={70} // Même taille que l'intérieur de la jauge
-            fill='#f0f0f0' // Couleur de votre choix pour le cercle de fond
-            dataKey='value'
-            paddingAngle={-10}
           />
           <text
             x='50%'
@@ -70,7 +64,7 @@ export default function TodayScore({ data }) {
           >
             objectif
           </text>
-        </PieChart>
+        </RadialBarChart>
       </ResponsiveContainer>
     </div>
   );

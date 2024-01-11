@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import HorizontalNavBar from './views/HorizontalNavBar';
 import VerticalNavBar from './views/VerticalNavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
