@@ -8,9 +8,6 @@ import {
 
 export default function TodayScore({ data }) {
   const dataFormated = [{ name: 'Score', value: data }];
-  const startAngle = 180;
-
-  const scoreEndAngle = startAngle - data * 360;
   const percentage = (data * 100).toFixed(0) + '%';
   return (
     <div className='today-score_container'>
@@ -19,18 +16,17 @@ export default function TodayScore({ data }) {
           innerRadius='80%'
           outerRadius='100%'
           data={dataFormated}
+          startAngle={180}
+          endAngle={-270}
         >
           <PolarAngleAxis type='number' domain={[0, 1]} tick={false} />
-          <circle cx='50%' cy='50%' fill='white' r='70' z-index='2'></circle>
+          <circle cx='50%' cy='50%' fill='white' r='90' z-index='2'></circle>
           <RadialBar
-            minAngle={15}
             background
             clockWise={true}
             dataKey='value'
-            cornerRadius={45}
-            fill='#ff7300'
-            startAngle={startAngle}
-            endAngle={scoreEndAngle}
+            cornerRadius={30}
+            fill='#e60000'
           />
           <text
             x='50%'

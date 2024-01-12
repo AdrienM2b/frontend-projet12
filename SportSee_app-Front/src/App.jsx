@@ -6,7 +6,7 @@ import UserPage from './views/UserPage';
 
 function App() {
   return (
-    <div>
+    <>
       <HorizontalNavBar />
       <VerticalNavBar />
       <Router>
@@ -14,7 +14,7 @@ function App() {
           <Route path='/user/:id' element={<UserPage />} />
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 

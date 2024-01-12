@@ -42,39 +42,48 @@ export default function AverageSessions({ data }) {
     return null;
   };
 
-  const CustomTick = (props) => {
-    const { fill, payload, x, y } = props;
+  // const CustomTick = (props) => {
+  //   const { fill, payload, x, width } = props;
 
-    console.log(props);
-    return (
-      <g>
-        <text fill={fill} x={x} y={y}>
-          {formatXAxis(payload.value)}
-        </text>
-      </g>
-    );
-  };
+  //   console.log(props);
+  //   return (
+  //     <text
+  //       style={{ fontSize: '12px' }}
+  //       fill={fill}
+  //       x={x}
+  //       y={240}
+  //       width={width}
+  //     >
+  //       {formatXAxis(payload.value)}
+  //     </text>
+  //   );
+  // };
 
   return (
     <div className='average-sessions_container'>
-      <ResponsiveContainer width='100%' height='100%' padding={80}>
+      <ResponsiveContainer width='100%' height='100%'>
         <h3>Durée moyenne des sessions</h3>
         <LineChart
           title='Durée moyenne des sessions'
           data={data.sessions}
-          margin={{ top: 30, left: 0, right: 0, bottom: 0 }}
+          margin={{ top: 100, right: 0, left: 0, bottom: 20 }}
         >
           <XAxis
             dataKey='day'
             tickLine={false}
-            tick={<CustomTick fill={'white'} x={0} y={0} />}
-            opacity={0.5}
+            tick={{ fill: 'white', fontSize: 12 }}
             axisLine={false}
+            tickFormatter={formatXAxis}
+            fillOpacity={0.5}
+            fontWeight={500}
+            style={{ transform: 'scale(0.91)', transformOrigin: 'bottom' }}
+            tickSize={10}
+            interval={'preserveStartEnd'}
           />
           <YAxis hide />
           <Tooltip
             content={<CustomTooltip />}
-            cursor={<CustomCursor width={200} height={400} />}
+            cursor={<CustomCursor width={300} height={400} />}
           />
           <Line
             type='monotone'
@@ -83,7 +92,7 @@ export default function AverageSessions({ data }) {
             opacity={0.5}
             strokeWidth={2}
             dot={false}
-            activeDot={{ r: 3 }}
+            activeDot={{ r: 4 }}
           />
         </LineChart>
       </ResponsiveContainer>

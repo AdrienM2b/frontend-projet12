@@ -3,15 +3,16 @@ $secondary-color: #020203;
 $tertiary-color: white;
 
 .horizontal-navbar_container {
+  padding: 0 2% 0 2%;
   position: absolute;
   top: 0%;
   z-index: 1000;
-  width: 100vw;
+  width: 96%;
   height: 8vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: $secondary-color;
   a {
     color: $tertiary-color;

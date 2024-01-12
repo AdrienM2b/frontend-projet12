@@ -32,10 +32,8 @@ export default function DailyActivities({ data }) {
   return (
     <div className='barchart_container'>
       <h3>Activité quotidienne</h3>
-      <ResponsiveContainer width='100%' height='100%'>
+      <ResponsiveContainer width='85%' height='85%'>
         <BarChart
-          width={800}
-          height={300}
           data={data.sessions}
           margin={{ top: 10, right: 30, left: 20, bottom: 50 }}
         >
