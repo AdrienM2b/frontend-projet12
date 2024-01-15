@@ -10,10 +10,8 @@ import {
 } from 'recharts';
 
 export default function AverageSessions({ data }) {
-  console.log(data);
   const CustomCursor = (props) => {
     const { width, height } = props;
-
     return (
       <Rectangle
         fill='#000000'
