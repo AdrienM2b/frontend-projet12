@@ -10,15 +10,10 @@ import {
 } from 'recharts';
 
 export default function AverageSessions({ data }) {
-  const formatXAxis = (tickItem) => {
-    const joursSemaine = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-    const jourSemaine = joursSemaine[tickItem - 1];
-
-    return jourSemaine;
-  };
+  console.log(data);
   const CustomCursor = (props) => {
     const { width, height } = props;
-    console.log(props.points[0].x);
+
     return (
       <Rectangle
         fill='#000000'
@@ -42,30 +37,13 @@ export default function AverageSessions({ data }) {
     return null;
   };
 
-  // const CustomTick = (props) => {
-  //   const { fill, payload, x, width } = props;
-
-  //   console.log(props);
-  //   return (
-  //     <text
-  //       style={{ fontSize: '12px' }}
-  //       fill={fill}
-  //       x={x}
-  //       y={240}
-  //       width={width}
-  //     >
-  //       {formatXAxis(payload.value)}
-  //     </text>
-  //   );
-  // };
-
   return (
     <div className='average-sessions_container'>
       <ResponsiveContainer width='100%' height='100%'>
         <h3>Durée moyenne des sessions</h3>
         <LineChart
           title='Durée moyenne des sessions'
-          data={data.sessions}
+          data={data.activityData}
           margin={{ top: 100, right: 0, left: 0, bottom: 20 }}
         >
           <XAxis
@@ -73,7 +51,7 @@ export default function AverageSessions({ data }) {
             tickLine={false}
             tick={{ fill: 'white', fontSize: 12 }}
             axisLine={false}
-            tickFormatter={formatXAxis}
+            tickFormatter={data.dayOfTheWeek}
             fillOpacity={0.5}
             fontWeight={500}
             style={{ transform: 'scale(0.91)', transformOrigin: 'bottom' }}

@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-export default function DailyActivities({ data }) {
+export default function DailyActivities(data) {
   const formatXAxis = (tickItem) => {
     return new Date(tickItem).getDate();
   };
@@ -34,7 +34,7 @@ export default function DailyActivities({ data }) {
       <h3>Activité quotidienne</h3>
       <ResponsiveContainer width='85%' height='85%'>
         <BarChart
-          data={data.sessions}
+          data={data.data}
           margin={{ top: 10, right: 30, left: 20, bottom: 50 }}
         >
           <CartesianGrid strokeDasharray='3 3' stroke='' />

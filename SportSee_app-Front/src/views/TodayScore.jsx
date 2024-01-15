@@ -7,15 +7,13 @@ import {
 } from 'recharts';
 
 export default function TodayScore({ data }) {
-  const dataFormated = [{ name: 'Score', value: data }];
-  const percentage = (data * 100).toFixed(0) + '%';
   return (
     <div className='today-score_container'>
       <ResponsiveContainer width='100%' height='100%'>
         <RadialBarChart
           innerRadius='80%'
           outerRadius='100%'
-          data={dataFormated}
+          data={data.todayScoreFormated}
           startAngle={180}
           endAngle={-270}
         >
@@ -38,7 +36,7 @@ export default function TodayScore({ data }) {
             fontWeight={700}
             className='percentage-text'
           >
-            {percentage}
+            {data.scoreInString}
           </text>
           <text
             x='50%'
