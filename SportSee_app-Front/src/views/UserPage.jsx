@@ -18,8 +18,6 @@ function UserPage() {
     });
   }, [id]);
 
-  console.log(data);
-
   if (
     !data ||
     !data.mainData ||

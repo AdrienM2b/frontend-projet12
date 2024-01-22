@@ -7,7 +7,6 @@ export async function FormattedData(id) {
   const userActivity = activityData(data);
   const userPerformance = performanceData(data);
 
-  // Retournez les résultats des fonctions
   return { mainData, userSession, userActivity, userPerformance };
 }
 
