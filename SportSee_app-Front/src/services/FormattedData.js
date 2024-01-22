@@ -1,15 +1,22 @@
 import getData from './GetData';
-// import { getDataMocked } from './GetData';
+import getDataMocked from './getMockedData';
 
 export async function FormattedData(id) {
-  // function des datas mockées
-  // const data = getDataMocked(id);
-
   const data = await getData(id);
   const mainData = mainUserData(data);
   const userSession = sessionData(data);
   const userActivity = activityData(data);
   const userPerformance = performanceData(data);
+
+  return { mainData, userSession, userActivity, userPerformance };
+}
+export async function FormattedMockedData(id) {
+  // function des datas mockées
+  const dataMocked = getDataMocked(id);
+  const mainData = mainUserData(dataMocked);
+  const userSession = sessionData(dataMocked);
+  const userActivity = activityData(dataMocked);
+  const userPerformance = performanceData(dataMocked);
 
   return { mainData, userSession, userActivity, userPerformance };
 }

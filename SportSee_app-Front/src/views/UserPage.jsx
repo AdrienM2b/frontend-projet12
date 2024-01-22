@@ -6,6 +6,7 @@ import Performance from './Performance';
 import TodayScore from './TodayScore';
 import NutritionCounter from './NutritionCounter';
 import { FormattedData } from '../services/FormattedData.js';
+import { FormattedMockedData } from '../services/FormattedData.js';
 import { useParams } from 'react-router-dom';
 
 function UserPage() {
@@ -14,6 +15,13 @@ function UserPage() {
 
   useEffect(() => {
     FormattedData(id).then((formattedData) => {
+      setData(formattedData);
+    });
+  }, [id]);
+
+  // données mockées
+  useEffect(() => {
+    FormattedMockedData(id).then((formattedData) => {
       setData(formattedData);
     });
   }, [id]);

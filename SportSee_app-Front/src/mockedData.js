@@ -4,16 +4,16 @@ export const data = [
       data: {
         id: 13,
         userInfos: {
-          firstName: 'Karl',
+          firstName: 'Gerard',
           lastName: 'Dovineau',
           age: 31,
         },
-        todayScore: 0.12,
+        todayScore: 0.4,
         keyData: {
           calorieCount: 1930,
           proteinCount: 155,
-          carbohydrateCount: 290,
-          lipidCount: 50,
+          carbohydrateCount: 200,
+          lipidCount: 30,
         },
       },
     },
@@ -25,38 +25,38 @@ export const data = [
         sessions: [
           {
             day: '2020-07-01',
-            kilogram: 80,
-            calories: 240,
+            kilogram: 90,
+            calories: 440,
           },
           {
             day: '2020-07-02',
-            kilogram: 80,
-            calories: 220,
+            kilogram: 90,
+            calories: 420,
           },
           {
             day: '2020-07-03',
-            kilogram: 81,
-            calories: 280,
+            kilogram: 91,
+            calories: 480,
           },
           {
             day: '2020-07-04',
-            kilogram: 81,
-            calories: 290,
+            kilogram: 91,
+            calories: 490,
           },
           {
             day: '2020-07-05',
-            kilogram: 80,
-            calories: 160,
+            kilogram: 90,
+            calories: 460,
           },
           {
             day: '2020-07-06',
-            kilogram: 78,
-            calories: 162,
+            kilogram: 98,
+            calories: 462,
           },
           {
             day: '2020-07-07',
-            kilogram: 76,
-            calories: 390,
+            kilogram: 96,
+            calories: 490,
           },
         ],
       },
@@ -81,19 +81,19 @@ export const data = [
           },
           {
             day: 4,
-            sessionLength: 50,
+            sessionLength: 80,
           },
           {
             day: 5,
-            sessionLength: 0,
+            sessionLength: 27,
           },
           {
             day: 6,
-            sessionLength: 0,
+            sessionLength: 10,
           },
           {
             day: 7,
-            sessionLength: 60,
+            sessionLength: 68,
           },
         ],
       },
@@ -113,19 +113,19 @@ export const data = [
         },
         data: [
           {
-            value: 80,
+            value: 20,
             kind: 1,
           },
           {
-            value: 120,
+            value: 170,
             kind: 2,
           },
           {
-            value: 140,
+            value: 120,
             kind: 3,
           },
           {
-            value: 50,
+            value: 150,
             kind: 4,
           },
           {
