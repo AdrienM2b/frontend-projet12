@@ -1,6 +1,10 @@
 import getData from './GetData';
+// import { getDataMocked } from './GetData';
 
 export async function FormattedData(id) {
+  // function des datas mockées
+  // const data = getDataMocked(id);
+
   const data = await getData(id);
   const mainData = mainUserData(data);
   const userSession = sessionData(data);
@@ -13,10 +17,11 @@ export async function FormattedData(id) {
 function mainUserData(data) {
   if (data[0]) {
     const userData = data[0].data.data;
-
     const convertInPercentage = userData.todayScore * 100;
     const scoreInString = convertInPercentage.toString() + '%';
     const todayScoreFormated = [{ name: 'Score', value: userData.todayScore }];
+
+    console.log(todayScoreFormated);
 
     return { userData, scoreInString, todayScoreFormated };
   }

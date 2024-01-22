@@ -77,6 +77,16 @@ $secondary-color: #020203;
 $tertiary-color: white;
 $gradient-color: #b80000;
 
+.error-message {
+  // position: absolute;
+  margin: 50vh auto;
+  width: 30vh;
+  color: #e60000;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+}
+
 .greetings_container {
   &-title {
     display: flex;

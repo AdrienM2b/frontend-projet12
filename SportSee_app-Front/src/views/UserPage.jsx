@@ -25,7 +25,12 @@ function UserPage() {
     !data.userActivity ||
     !data.userPerformance
   ) {
-    return <div>Chargement...</div>;
+    return (
+      <div className='error-message'>
+        Oups ... <br /> Les données <br />
+        ne peuvent pas être chargées...
+      </div>
+    );
   }
 
   return (
